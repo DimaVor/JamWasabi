@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MaleBeardSpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: ace7a38dceaf1ec4eb52280e83a42e03, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 39d7df0718a92054188e0dbc0447358e: 90918290
+    - 39d7df0718a92054188e0dbc0447358e: 527379674
+    - 39d7df0718a92054188e0dbc0447358e: 815444756
+    - 39d7df0718a92054188e0dbc0447358e: 1252477426
+    - 39d7df0718a92054188e0dbc0447358e: 128474115
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 90918290, guid: 39d7df0718a92054188e0dbc0447358e, type: 3}
+  - {fileID: 527379674, guid: 39d7df0718a92054188e0dbc0447358e, type: 3}
+  - {fileID: 815444756, guid: 39d7df0718a92054188e0dbc0447358e, type: 3}
+  - {fileID: 1252477426, guid: 39d7df0718a92054188e0dbc0447358e, type: 3}
+  - {fileID: 128474115, guid: 39d7df0718a92054188e0dbc0447358e, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - png-transparent-black-mustache-art-handlebar-moustache-pencil-moustache-beard-beard-and-moustache-face-people-fashion_3
+  - png-transparent-black-mustache-art-handlebar-moustache-pencil-moustache-beard-beard-and-moustache-face-people-fashion_4
+  - png-transparent-black-mustache-art-handlebar-moustache-pencil-moustache-beard-beard-and-moustache-face-people-fashion_0
+  - png-transparent-black-mustache-art-handlebar-moustache-pencil-moustache-beard-beard-and-moustache-face-people-fashion_1
+  - png-transparent-black-mustache-art-handlebar-moustache-pencil-moustache-beard-beard-and-moustache-face-people-fashion_2
+  m_RenderDataMap: {}
+  m_Tag: MaleBeardSpriteAtlas
+  m_IsVariant: 0

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d59d36a58e46b69684d23062d3b610, type: 3}
+  m_Name: HumanSpriteCollection
+  m_EditorClassIdentifier: 
+  m_faceSpriteAtlas: {fileID: 0}
+  m_eyesSpriteAtlas: {fileID: 0}
+  m_wyebrowsSpriteAtlas: {fileID: 0}
+  m_mouthSpriteAtlas: {fileID: 0}
+  m_noseSpriteAtlas: {fileID: 0}
+  m_maleHaircutSpriteAtlas: {fileID: 0}
+  m_femaleHaircutSpriteAtlas: {fileID: 0}
+  m_maleBeardSpriteAtlas: {fileID: 0}
+  m_maleHeaddressSpriteAtlas: {fileID: 0}
+  m_femaleHeaddressSpriteAtlas: {fileID: 0}
