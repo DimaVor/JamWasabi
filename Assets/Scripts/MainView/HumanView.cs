@@ -7,33 +7,29 @@ namespace MainView
     public class HumanView : MonoBehaviour
     {
         [SerializeField] private Image m_humanFaceImage;
-
         [SerializeField] private Image m_humanEyesSpriteImage;
-
         [SerializeField] private Image m_humanWyebrowsImage;
-
         [SerializeField] private Image m_humanMouthImage;
-
         [SerializeField] private Image m_humanHaircutImage;
-
         [SerializeField] private Image m_maleBeardImage;
-
         [SerializeField] private Image m_humanHeaddressImage;
 
         private bool m_isMale;
 
-
-        public HumanView(Image mHumanFaceImage, Image mHumanWyesSpriteImage, Image mHumanWyebrowsImage, Image mHumanMouthImage, Image mHumanHaircutImage, [CanBeNull] Image mMaleBeardImage, [CanBeNull] Image mHumanHeaddressImage, bool mIsMale)
+        public HumanView(Image mHumanFaceImage, Image mHumanEyesSpriteImage, Image mHumanWyebrowsImage, Image mHumanMouthImage, Image mHumanHaircutImage, [CanBeNull] Image mMaleBeardImage, [CanBeNull] Image mHumanHeaddressImage, bool mIsMale)
         {
             m_humanFaceImage = mHumanFaceImage;
-            m_humanEyesSpriteImage = mHumanWyesSpriteImage;
+            m_humanEyesSpriteImage = mHumanEyesSpriteImage;
             m_humanWyebrowsImage = mHumanWyebrowsImage;
             m_humanMouthImage = mHumanMouthImage;
             m_humanHaircutImage = mHumanHaircutImage;
             m_maleBeardImage = mMaleBeardImage;
             m_humanHeaddressImage = mHumanHeaddressImage;
             m_isMale = mIsMale;
+        }
 
+        public void InitializeView()
+        {
             CheckSex(m_isMale);
         }
 
