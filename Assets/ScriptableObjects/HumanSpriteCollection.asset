@@ -29,5 +29,83 @@ MonoBehaviour:
   m_maleGlassesSpriteAtlas: {fileID: 4343727234628468602, guid: c941cea514c02a748abb7c29a267a926, type: 2}
   m_femaleGlassesSpriteAtlas: {fileID: 4343727234628468602, guid: 5e9f6dcbbfe8ad349804c6f14336a736, type: 2}
   m_femaleHeaddressSpriteAtlas: {fileID: 4343727234628468602, guid: 26205da5c2bc87a4eb359be752b732db, type: 2}
-  m_spriteNames:
-  - sfdg
+  m_FaceSpriteNames:
+  - Male_Face
+  - Female_Face
+  m_BodySpriteNames:
+  - Male_Body
+  - Female_Body
+  m_EyesSpriteNames:
+  - eye
+  - eye_1
+  - eye_2
+  - eye_3
+  - eye_4
+  - eye_5
+  - eye_6
+  m_MaleEyebrowsSpriteNames:
+  - brows_2
+  - brows_1
+  - brows_3
+  m_FemaleEyebrowsSpriteNames:
+  - brows03
+  - brows04
+  - brows02
+  - brows
+  m_MaleLipsSpriteNames:
+  - Lips03
+  - Lips02
+  - Lips01
+  - Lips04
+  m_FemaleLipsSpriteNames:
+  - Lips
+  - Lips04
+  - Lips03
+  - Lips02
+  m_MaleNoseSpriteNames:
+  - nose03
+  - nose01
+  - nose02
+  m_FemaleNoseSpriteNames:
+  - nose02
+  - nose
+  - nose03
+  m_MaleHaircutSpriteNames:
+  - hair_2
+  - hair_3
+  - hair_1
+  - hair_4
+  m_FemaleHaircutSpriteNames:
+  - hair05
+  - hair
+  - hair04
+  - hair03
+  - hair02
+  - hair06
+  m_MaleBeardSpriteNames:
+  - beard_1
+  - beard_2
+  - beard_3
+  - beard_4
+  - beard_5
+  m_FemaleHeaddressSpriteNames:
+  - hair_ac
+  m_MaleClothesSpriteNames:
+  - clothers_3
+  - clothers_1
+  - clothers_2
+  m_FemaleClothesSpriteNames:
+  - clothers
+  - clothers03
+  - clothers02
+  - clothers04
+  m_MaleGlassesSpriteNames:
+  - glasses
+  - sunglasses
+  - sunglasses02
+  - glasses02
+  m_FemaleGlassesSpriteNames:
+  - sunglasses
+  - sunglasses02
+  - glasses02
+  - glasses

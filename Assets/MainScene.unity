@@ -591,6 +591,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -0.01625061
       objectReference: {fileID: 0}
+    - target: {fileID: 276319151267838823, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 450
+      objectReference: {fileID: 0}
     - target: {fileID: 1555049137082152059, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
       propertyPath: m_Name
       value: Clothes
@@ -622,6 +626,22 @@ PrefabInstance:
     - target: {fileID: 4012134726113522426, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
       propertyPath: m_Name
       value: Eyebrowns
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577232067755480241, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -83.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577232067755480241, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -74.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577232067755480241, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577232067755480241, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 88
       objectReference: {fileID: 0}
     - target: {fileID: 4686897405985647402, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
       propertyPath: m_IsActive
@@ -743,6 +763,18 @@ PrefabInstance:
       propertyPath: m_isCanMove
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8284800873700228012, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
+      propertyPath: m_availableColors.Array.data[3].b
+      value: 0.8160377
+      objectReference: {fileID: 0}
+    - target: {fileID: 8284800873700228012, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
+      propertyPath: m_availableColors.Array.data[3].g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8284800873700228012, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
+      propertyPath: m_availableColors.Array.data[3].r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8285398242313482207, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -754,6 +786,10 @@ PrefabInstance:
     - target: {fileID: 8285398242313482207, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.02746582
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419610109439884738, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
+      propertyPath: m_isCanMove
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8890031964673747708, guid: 58718b884165dc94ba6e61a5994d5ba8, type: 3}
       propertyPath: m_Enabled

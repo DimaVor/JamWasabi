@@ -1,4 +1,5 @@
 ﻿using MainView;
+using SpriteCollections;
 using UnityEngine;
 
 namespace MainScene
