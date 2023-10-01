@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: FemaleClothesSpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 3709ad3fe5f834140818ac70569a11af, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - e6b162c1abd9772449a9b77793f494e0: 21300000
+    - 27f12bd795944ef4fab272b891fa5069: 21300000
+    - 067703fac84761448a39921892b96218: 21300000
+    - e402ac2ca5851cd409b471fe26f288d6: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: e6b162c1abd9772449a9b77793f494e0, type: 3}
+  - {fileID: 21300000, guid: 27f12bd795944ef4fab272b891fa5069, type: 3}
+  - {fileID: 21300000, guid: 067703fac84761448a39921892b96218, type: 3}
+  - {fileID: 21300000, guid: e402ac2ca5851cd409b471fe26f288d6, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - clothers
+  - clothers03
+  - clothers02
+  - clothers04
+  m_RenderDataMap: {}
+  m_Tag: FemaleClothesSpriteAtlas
+  m_IsVariant: 0

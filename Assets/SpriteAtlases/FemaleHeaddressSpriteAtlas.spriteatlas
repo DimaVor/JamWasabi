@@ -36,10 +36,16 @@ SpriteAtlas:
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
-    packedSpriteRenderDataKeys: []
+    packedSpriteRenderDataKeys:
+    - e3551b304041df64395deb4997537bd2: 21300000
+    - 8308735cc78e53a4780c631d87ae393c: 21300000
   m_MasterAtlas: {fileID: 0}
-  m_PackedSprites: []
-  m_PackedSpriteNamesToIndex: []
+  m_PackedSprites:
+  - {fileID: 21300000, guid: e3551b304041df64395deb4997537bd2, type: 3}
+  - {fileID: 21300000, guid: 8308735cc78e53a4780c631d87ae393c, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - hair_ac
+  - hat
   m_RenderDataMap: {}
   m_Tag: FemaleHeaddressSpriteAtlas
   m_IsVariant: 0

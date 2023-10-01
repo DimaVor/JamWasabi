@@ -36,10 +36,25 @@ SpriteAtlas:
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
-    packedSpriteRenderDataKeys: []
+    packedSpriteRenderDataKeys:
+    - 8ef1c861cf7d48b49868ffa476942ba8: 21300000
+    - bf93c1e10de91fc4fab53218ef9d2f43: 21300000
+    - 69c7a9d31c038184e860e9edc660d95a: 21300000
+    - 8689b81877abd944f90423cb8834c572: 21300000
+    - be21f6ab8c5d4994cb63395d14b071a4: 21300000
   m_MasterAtlas: {fileID: 0}
-  m_PackedSprites: []
-  m_PackedSpriteNamesToIndex: []
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 8ef1c861cf7d48b49868ffa476942ba8, type: 3}
+  - {fileID: 21300000, guid: bf93c1e10de91fc4fab53218ef9d2f43, type: 3}
+  - {fileID: 21300000, guid: 69c7a9d31c038184e860e9edc660d95a, type: 3}
+  - {fileID: 21300000, guid: 8689b81877abd944f90423cb8834c572, type: 3}
+  - {fileID: 21300000, guid: be21f6ab8c5d4994cb63395d14b071a4, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - hair_2
+  - hair_5
+  - hair_3
+  - hair_1
+  - hair_4
   m_RenderDataMap: {}
   m_Tag: MaleHaircutSpriteAtlas
   m_IsVariant: 0

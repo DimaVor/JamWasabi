@@ -36,10 +36,64 @@ SpriteAtlas:
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
-    packedSpriteRenderDataKeys: []
+    packedSpriteRenderDataKeys:
+    - 517e6870432fc3747b1d1df243046bec: 21300000
+    - 421e445180cdaa344b8a115c8362ee18: 21300000
+    - 7aa572d2dae9c6843b04c8eff77453b6: 21300000
+    - 5a1d5ab34020e7c4f89c42cc7f383d58: 21300000
+    - 853163c57b5ae934f9c3e248ed329fc5: 21300000
+    - 94a5cdc5c357e7d45ba6535709ba5f2c: 21300000
+    - aef586a61a441db489e07e77ea5ee08e: 21300000
+    - 6cccc8a762d6d8a44a61324eae55c40c: 21300000
+    - cc29cbc7b5f1283409dbb2c212cac7e1: 21300000
+    - 804ce6d7c7cbd9f4da594e7a31fa0af1: 21300000
+    - c55d9899154f8b248a2b512d7537153e: 21300000
+    - 7f812d6a3621bbf4b9de517e6c3e8f23: 21300000
+    - d11e239a5bb67174884ef4c9ce25c257: 21300000
+    - 14a2099a3371c9e4fa2dc7b76158baed: 21300000
+    - 2c805aea082dc314b814e2860354454f: 21300000
+    - 5ef823fa60b9b28469a232e174860704: 21300000
+    - 1541398dda0281f4da2c4c9bdd609d67: 21300000
+    - d839325e683f994478d3c5d0961b2732: 21300000
   m_MasterAtlas: {fileID: 0}
-  m_PackedSprites: []
-  m_PackedSpriteNamesToIndex: []
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 517e6870432fc3747b1d1df243046bec, type: 3}
+  - {fileID: 21300000, guid: 421e445180cdaa344b8a115c8362ee18, type: 3}
+  - {fileID: 21300000, guid: 7aa572d2dae9c6843b04c8eff77453b6, type: 3}
+  - {fileID: 21300000, guid: 5a1d5ab34020e7c4f89c42cc7f383d58, type: 3}
+  - {fileID: 21300000, guid: 853163c57b5ae934f9c3e248ed329fc5, type: 3}
+  - {fileID: 21300000, guid: 94a5cdc5c357e7d45ba6535709ba5f2c, type: 3}
+  - {fileID: 21300000, guid: aef586a61a441db489e07e77ea5ee08e, type: 3}
+  - {fileID: 21300000, guid: 6cccc8a762d6d8a44a61324eae55c40c, type: 3}
+  - {fileID: 21300000, guid: cc29cbc7b5f1283409dbb2c212cac7e1, type: 3}
+  - {fileID: 21300000, guid: 804ce6d7c7cbd9f4da594e7a31fa0af1, type: 3}
+  - {fileID: 21300000, guid: c55d9899154f8b248a2b512d7537153e, type: 3}
+  - {fileID: 21300000, guid: 7f812d6a3621bbf4b9de517e6c3e8f23, type: 3}
+  - {fileID: 21300000, guid: d11e239a5bb67174884ef4c9ce25c257, type: 3}
+  - {fileID: 21300000, guid: 14a2099a3371c9e4fa2dc7b76158baed, type: 3}
+  - {fileID: 21300000, guid: 2c805aea082dc314b814e2860354454f, type: 3}
+  - {fileID: 21300000, guid: 5ef823fa60b9b28469a232e174860704, type: 3}
+  - {fileID: 21300000, guid: 1541398dda0281f4da2c4c9bdd609d67, type: 3}
+  - {fileID: 21300000, guid: d839325e683f994478d3c5d0961b2732, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - eye_2
+  - eye_g
+  - eye_5
+  - eye_9
+  - eye_02
+  - eye_03b
+  - eye_02b
+  - eye_8
+  - eye_6
+  - eye_7
+  - eye_03g
+  - eye_4
+  - eye_1
+  - eye_b
+  - eye_3
+  - 'eye_02g '
+  - eye
+  - eye_03
   m_RenderDataMap: {}
   m_Tag: EyesSpriteAtlas
   m_IsVariant: 0

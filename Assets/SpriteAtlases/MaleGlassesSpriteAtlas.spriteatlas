@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: MaleGlassesSpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 149a7937776fd92458f345c58bef2414, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - 83ecd4b8396ceaf44b37b01d6f802426: 21300000
+    - 515682cdfb33ce146b2b9d99ba1c7a5b: 21300000
+    - 6eb869ed8d6ce0a41ab8ac6d0bd18a7d: 21300000
+    - 0623354fc4ba08c4b9e6c6aff18d225c: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 83ecd4b8396ceaf44b37b01d6f802426, type: 3}
+  - {fileID: 21300000, guid: 515682cdfb33ce146b2b9d99ba1c7a5b, type: 3}
+  - {fileID: 21300000, guid: 6eb869ed8d6ce0a41ab8ac6d0bd18a7d, type: 3}
+  - {fileID: 21300000, guid: 0623354fc4ba08c4b9e6c6aff18d225c, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - glasses
+  - sunglasses
+  - sunglasses02
+  - glasses02
+  m_RenderDataMap: {}
+  m_Tag: MaleGlassesSpriteAtlas
+  m_IsVariant: 0

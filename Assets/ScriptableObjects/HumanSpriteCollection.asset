@@ -13,12 +13,21 @@ MonoBehaviour:
   m_Name: HumanSpriteCollection
   m_EditorClassIdentifier: 
   m_faceSpriteAtlas: {fileID: 4343727234628468602, guid: 381ee9ad7dc05714eb36d5a1839e5e8b, type: 2}
+  m_bodySpriteAtlas: {fileID: 4343727234628468602, guid: 87e56609fa4776149aed1478e42e00f6, type: 2}
   m_eyesSpriteAtlas: {fileID: 4343727234628468602, guid: ed81fc0d472eee74cb132c998502d60e, type: 2}
-  m_wyebrowsSpriteAtlas: {fileID: 4343727234628468602, guid: aa0bc1df13907844480a844557049f81, type: 2}
-  m_mouthSpriteAtlas: {fileID: 4343727234628468602, guid: 2a286c96e683e3d4b8ee45c8fd7ed699, type: 2}
-  m_noseSpriteAtlas: {fileID: 4343727234628468602, guid: c3de59c896e04aa44a03bdb8116789e6, type: 2}
+  m_maleEyebrowsSpriteAtlas: {fileID: 4343727234628468602, guid: aa0bc1df13907844480a844557049f81, type: 2}
+  m_femaleEyebrowsSpriteAtlas: {fileID: 4343727234628468602, guid: dcb8e38b8fb2dc24f990f0e681ba857b, type: 2}
+  m_maleLipsSpriteAtlas: {fileID: 4343727234628468602, guid: 2a286c96e683e3d4b8ee45c8fd7ed699, type: 2}
+  m_femaleLipsSpriteAtlas: {fileID: 4343727234628468602, guid: 7b3ae09986687774fab42cdd34db735a, type: 2}
+  m_maleNoseSpriteAtlas: {fileID: 4343727234628468602, guid: c3de59c896e04aa44a03bdb8116789e6, type: 2}
+  m_femaleNoseSpriteAtlas: {fileID: 4343727234628468602, guid: 5280aed1227483846b7e9b2ec7208f4e, type: 2}
+  m_maleClothesSpriteAtlas: {fileID: 4343727234628468602, guid: ce43d9c40abdbd74a9d57f637443f3b2, type: 2}
+  m_femaleClothesSpriteAtlas: {fileID: 4343727234628468602, guid: aa527700fa145f14992054cce8e2acc8, type: 2}
   m_maleHaircutSpriteAtlas: {fileID: 4343727234628468602, guid: 070e7dd0dbb9f5346b81e45edac4888c, type: 2}
   m_femaleHaircutSpriteAtlas: {fileID: 4343727234628468602, guid: 12432e0cdd07abe4d9323851249db9d4, type: 2}
   m_maleBeardSpriteAtlas: {fileID: 4343727234628468602, guid: ebbdbec584fa2e54d9c0b03bb98684f8, type: 2}
-  m_maleHeaddressSpriteAtlas: {fileID: 4343727234628468602, guid: d74efed372555684ca6ef8fdbd835610, type: 2}
+  m_maleGlassesSpriteAtlas: {fileID: 4343727234628468602, guid: c941cea514c02a748abb7c29a267a926, type: 2}
+  m_femaleGlassesSpriteAtlas: {fileID: 4343727234628468602, guid: 5e9f6dcbbfe8ad349804c6f14336a736, type: 2}
   m_femaleHeaddressSpriteAtlas: {fileID: 4343727234628468602, guid: 26205da5c2bc87a4eb359be752b732db, type: 2}
+  m_spriteNames:
+  - sfdg

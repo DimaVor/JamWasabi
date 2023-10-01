@@ -1,17 +1,32 @@
-﻿namespace MainView
+﻿namespace SpriteCollections
 {
     public enum SpriteAtlasType
     {
         Face,
+
+        Body,
         Eyes,
-        Eyebrows,
-        Mouth,
-        Nose,
+
+        MaleEyebrows,
+        FemaleEyebrows,
+
+        MaleLips,
+        FemaleLips,
+
+        MaleNose,
+        FemaleNose,
+
         MaleHaircut,
         FemaleHaircut,
-        MaleBeard,
-        MaleHeaddress,
-        FemaleHeaddress
 
+        MaleBeard,
+
+        FemaleHeaddress,
+
+        MaleClothes,
+        FemaleClothes,
+
+        MaleGlasses,
+        FemaleGlasses,
     }
 }
