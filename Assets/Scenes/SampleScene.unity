@@ -1422,6 +1422,107 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225339172}
   m_CullTransparentMesh: 1
+--- !u!1 &1242969566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1242969568}
+  - component: {fileID: 1242969567}
+  m_Layer: 0
+  m_Name: SpawnController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1242969567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242969566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 887e708690d3bff4fbb944b1b420798a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _manNames:
+  - "\u0410\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440"
+  - "\u041C\u0438\u0445\u0430\u0438\u043B"
+  - "\u0418\u0432\u0430\u043D"
+  - "\u0414\u043C\u0438\u0442\u0440\u0438\u0439"
+  - "\u0421\u0435\u0440\u0433\u0435\u0439"
+  - "\u0410\u043D\u0434\u0440\u0435\u0439"
+  - "\u041F\u0430\u0432\u0435\u043B"
+  - "\u041D\u0438\u043A\u043E\u043B\u0430\u0439"
+  - "\u0412\u043B\u0430\u0434\u0438\u043C\u0438\u0440"
+  - "\u0410\u0440\u0442\u0435\u043C"
+  - "\u0410\u043B\u0435\u043A\u0441\u0435\u0439"
+  - "\u0415\u0433\u043E\u0440"
+  - "\u041C\u0430\u043A\u0441\u0438\u043C"
+  - "\u0414\u0435\u043D\u0438\u0441"
+  - "\u0413\u0440\u0438\u0433\u043E\u0440\u0438\u0439"
+  - "\u0418\u0433\u043E\u0440\u044C"
+  - "\u042E\u0440\u0438\u0439"
+  - "\u041E\u043B\u0435\u0433"
+  - "\u0420\u043E\u043C\u0430\u043D"
+  - "\u041A\u0438\u0440\u0438\u043B\u043B"
+  - "\u0410\u043D\u0442\u043E\u043D"
+  - "\u0422\u0438\u043C\u043E\u0444\u0435\u0439"
+  - "\u0424\u0435\u0434\u043E\u0440"
+  - "\u0412\u0438\u043A\u0442\u043E\u0440"
+  - "\u041F\u0435\u0442\u0440"
+  - "\u0412\u0430\u0441\u0438\u043B\u0438\u0439"
+  - "\u0412\u044F\u0447\u0435\u0441\u043B\u0430\u0432"
+  - "\u0421\u0442\u0430\u043D\u0438\u0441\u043B\u0430\u0432"
+  - "\u0410\u043D\u0430\u0442\u043E\u043B\u0438\u0439"
+  - "\u0418\u043B\u044C\u044F"
+  - "\u0421\u0435\u043C\u0435\u043D"
+  - "\u0412\u0430\u043B\u0435\u043D\u0442\u0438\u043D"
+  - "\u0414\u0430\u043D\u0438\u0438\u043B"
+  - "\u042F\u0440\u043E\u0441\u043B\u0430\u0432"
+  - "\u0413\u0435\u043E\u0440\u0433\u0438\u0439"
+  - "\u0412\u0438\u0442\u0430\u043B\u0438\u0439"
+  - "\u041B\u0435\u043E\u043D\u0438\u0434"
+  - "\u0415\u0432\u0433\u0435\u043D\u0438\u0439"
+  - "\u0418\u0433\u043D\u0430\u0442"
+  - "\u0420\u0443\u0441\u043B\u0430\u043D"
+  _manSurnames: []
+  _womanNames: []
+  _womanSurnames: []
+  _inWhiteListPrecent: 10
+  _inBlackListPrecent: 10
+  _blackListCount: 2
+  _whiteListCount: 5
+  _ourCompaniesNames: []
+  _otherCompaniesNames: []
+  _otherCompanyPrecent: 0
+  _endedDatePrecent: 5
+  _legitProfessions: []
+  _fakeProfessions: []
+  _fakeProfessionPrecent: 0
+  _LegitId: 0c0000001b0000005b000000
+  _fakeIdPrecent: 20
+--- !u!4 &1242969568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242969566}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 821.31244, y: 363.48422, z: 349.99512}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1243636718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2276,7 +2377,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -176, y: -232}
+  m_AnchoredPosition: {x: -204, y: -228}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1804391478
@@ -2947,3 +3048,4 @@ SceneRoots:
   - {fileID: 2060629378}
   - {fileID: 1960813354}
   - {fileID: 1243636720}
+  - {fileID: 1242969568}
