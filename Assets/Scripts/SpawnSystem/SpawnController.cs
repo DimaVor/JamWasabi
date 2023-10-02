@@ -190,10 +190,17 @@ public class SpawnController : MonoBehaviour
     private void OnEnable()
     {
         _enterPerson.OnFinishEnter += ShowCardAndPhone;
+        _exitPerson.OnFinishEnter += Exit;
     }
     private void OnDisable()
     {
         _enterPerson.OnFinishEnter -= ShowCardAndPhone;
+        _exitPerson.OnFinishEnter -= Exit;
+    }
+
+    private void Exit(bool val)
+    {
+        canUseExitPerson = val;
     }
 
 
@@ -243,7 +250,7 @@ public class SpawnController : MonoBehaviour
             if (!canUseEnterPerson)
                 return;
 
-            _sanctionsController.AcceptEnterPerson(1, 0);
+            _sanctionsController.AcceptEnterPerson(_threats, 0);
 
 
 
@@ -302,7 +309,7 @@ public class SpawnController : MonoBehaviour
 
             _card.SetCard(company, fullName, profession, id, lastDate);
 
-            GeneratePhone(isMan, fullName);
+            _threats += GeneratePhone(isMan, fullName);
 
             _enterPerson.GenerateHumanViewFinal(isMan, isMan ? HalfRandom() : false, false, HalfRandom());
 
@@ -321,9 +328,8 @@ public class SpawnController : MonoBehaviour
                 _threats++;
             if (!isLegitCompany)
                 _threats++;
-
-
-
+            if (!isFakePhoto)
+                _threats++;
         }
         else
         {
@@ -339,7 +345,7 @@ public class SpawnController : MonoBehaviour
     public void ShowCardAndPhone(bool isShow)
     {
         canUseEnterPerson = isShow;
-        canUseExitPerson = isShow;
+        //canUseExitPerson = isShow;
 
 
         _card.ShowCard(isShow);
@@ -506,9 +512,11 @@ public class SpawnController : MonoBehaviour
         }
 
         int threads = 0;
-        if (!isBadImage)
+        if (isBadImage)
             threads++;
-        if (!isVirus)
+        if (isVirus)
+            threads++;
+        if (isDb)
             threads++;
 
        return threads;

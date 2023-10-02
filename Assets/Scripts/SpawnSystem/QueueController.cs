@@ -68,6 +68,20 @@ public class QueueController : MonoBehaviour
         _canSpawnExitPerson = val;
     }
 
+
+    public void StartNextDay()
+    {
+        _startDate.AddDays(1);
+        isDayEnded = false;
+        realTime = 0;
+        var date = ModificateTime(realTime);
+        _date.text = date.ToString("dd/MM/yyyy");
+        _spawnController.EnterPerson.GoSpawn();
+        _spawnController.ExitPerson.GoSpawn();
+        StartCoroutine(RespawnCoroutine(true));
+        StartCoroutine(RespawnCoroutine(false));
+    }
+
     private void Awake()
     {
         isDayEnded = false;
@@ -144,6 +158,9 @@ public class QueueController : MonoBehaviour
         }
     }
 
+    [Inject]
+    EndofDayController _dayController;
+
     public void EndDay()
     {
         isDayEnded = true;
@@ -152,6 +169,7 @@ public class QueueController : MonoBehaviour
 
 
         _statesController.EndDay();
+        _dayController.ShowWin(true);
 
     }
 
@@ -161,7 +179,7 @@ public class QueueController : MonoBehaviour
         float multiplier = totalIngameMinutes / _dayTimeInSeconds;
         float currentIngameMinutes = multiplier * realTime;
         int currentIngameHours = _startDate.Hour + (int)(currentIngameMinutes / 60);
-        return new(2023, 10, 01, currentIngameHours, (int)(currentIngameMinutes % 60), 0);
+        return new(_startDate.Year, _startDate.Month, _startDate.Day, currentIngameHours, (int)(currentIngameMinutes % 60), 0);
     }
 
 

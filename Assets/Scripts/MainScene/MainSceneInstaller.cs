@@ -19,6 +19,8 @@ public class MainSceneInstaller : MonoInstaller<MainSceneInstaller>
 
     [SerializeField] private SanctionsController _sanctionsController;
 
+    [SerializeField] private EndofDayController _endofDayController;
+
     public override void InstallBindings()
     {
         Container.Bind<HumanSpriteCollection>().FromInstance(m_mainInstallerConfig.HumanSpriteCollection);
@@ -28,5 +30,6 @@ public class MainSceneInstaller : MonoInstaller<MainSceneInstaller>
         Container.Bind<CardModel>().FromInstance(_card);
         Container.Bind<PcController>().FromInstance(_pcController);
         Container.Bind<SanctionsController>().FromInstance(_sanctionsController);
+        Container.Bind<EndofDayController>().FromInstance(_endofDayController);
     }
 }

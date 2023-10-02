@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public enum States
 {
@@ -33,6 +34,9 @@ public class StatesController : MonoBehaviour
     [SerializeField] private Color _goodColor;
 
 
+    [Inject]
+    EndofDayController _dayController;
+
     private float _moneyTimer = 0;
 
     private void CheckFinishGame()
@@ -45,6 +49,7 @@ public class StatesController : MonoBehaviour
             if (st.currentValue < st.minValue)
             {
                 OnGameEnded?.Invoke(st.type);
+                _dayController.ShowLose(true);
                 break;
             }
         }
@@ -112,6 +117,7 @@ public class StatesController : MonoBehaviour
         if (!s.TryDecreaseValue(value))
         {
             OnGameEnded?.Invoke(state);
+            _dayController.ShowLose(true);
             return;
         }
         OnValueChanged?.Invoke(state, s.currentValue);
@@ -135,6 +141,7 @@ public class StatesController : MonoBehaviour
             if (!st.TryEndDay())
             {
                 OnGameEnded?.Invoke(st.type);
+                _dayController.ShowLose(true);
                 break;
             }
             OnValueChanged?.Invoke(st.type, st.currentValue);
@@ -160,10 +167,10 @@ public class StatesController : MonoBehaviour
             var currentState = _states.Find(x => x.type == (States)i);
             _sliders[i].value = currentState.currentValue / (currentState.maxValue - currentState.minValue);
             _sliderImages.Add(_sliders[i].fillRect.GetComponent<Image>());
-
         }
     }
 }
+
 
 [Serializable]
 public class State
