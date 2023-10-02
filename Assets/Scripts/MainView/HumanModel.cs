@@ -46,13 +46,10 @@ namespace MainView
         {
             m_isMale = mIsMale;
             m_isShouldAccept = mIsShouldAccept;
-            m_humanFaceSpriteName = mHumanFaceSpriteName;
-            m_humanEyesSpriteSpriteName = mHumanEyesSpriteSpriteName;
-            m_humanEyebrowsSpriteName = mHumanEyebrowsSpriteName;
-            m_humanMouthSpriteName = mHumanMouthSpriteName;
-            m_humanHaircutSpriteName = mHumanHaircutSpriteName;
-            m_maleBeardSpriteName = mMaleBeardSpriteName;
-            m_humanHeaddressSpriteName = mHumanHeaddressSpriteName;
+
+            
+
+
             m_humanName = mHumanName;
             m_surName = mSurName;
             m_expireDateTo = mExpireDateTo;
@@ -68,6 +65,16 @@ namespace MainView
             m_wasInBannedSite = mWasInBannedSite;
             m_haveVirus = mHaveVirus;
             m_appSpriteName = mAppSpriteName;
+
+
+
+            m_humanFaceSpriteName = mHumanFaceSpriteName;
+            m_humanEyesSpriteSpriteName = mHumanEyesSpriteSpriteName;
+            m_humanEyebrowsSpriteName = mHumanEyebrowsSpriteName;
+            m_humanMouthSpriteName = mHumanMouthSpriteName;
+            m_humanHaircutSpriteName = mHumanHaircutSpriteName;
+            m_maleBeardSpriteName = mMaleBeardSpriteName;
+            m_humanHeaddressSpriteName = mHumanHeaddressSpriteName;
         }
     }
 }

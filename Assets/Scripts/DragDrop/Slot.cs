@@ -12,7 +12,7 @@ public abstract class Slot : MonoBehaviour, IDropHandler
 
     protected abstract bool CheckClass(GameObject pointerDrag);
 
-    public void OnDrop(PointerEventData eventData)
+    public virtual void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null && CheckClass(eventData.pointerDrag))
         {

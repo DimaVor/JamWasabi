@@ -3,18 +3,19 @@ using UnityEngine.EventSystems;
 
 public class DragItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    private RectTransform _rectTransform;
+    protected RectTransform _rectTransform;
     private CanvasGroup _canvasGroup;
-    [SerializeField] private Canvas _canvas;
+    private Canvas _canvas;
 
 
     private void Awake()
     {
         _rectTransform = GetComponent<RectTransform>();
         _canvasGroup = GetComponent<CanvasGroup>();
+        _canvas = FindObjectOfType<Canvas>();
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    public virtual void OnBeginDrag(PointerEventData eventData)
     {
         _canvasGroup.blocksRaycasts = false;
 
