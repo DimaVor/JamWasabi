@@ -17,6 +17,8 @@ public class MainSceneInstaller : MonoInstaller<MainSceneInstaller>
 
     [SerializeField] private PcController _pcController;
 
+    [SerializeField] private SanctionsController _sanctionsController;
+
     public override void InstallBindings()
     {
         Container.Bind<HumanSpriteCollection>().FromInstance(m_mainInstallerConfig.HumanSpriteCollection);
@@ -25,5 +27,6 @@ public class MainSceneInstaller : MonoInstaller<MainSceneInstaller>
         Container.Bind<SpawnController>().FromInstance(_spawnController);
         Container.Bind<CardModel>().FromInstance(_card);
         Container.Bind<PcController>().FromInstance(_pcController);
+        Container.Bind<SanctionsController>().FromInstance(_sanctionsController);
     }
 }

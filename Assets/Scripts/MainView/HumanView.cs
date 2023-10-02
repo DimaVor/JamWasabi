@@ -1,7 +1,8 @@
-using System.Collections.Generic;
 using DG.Tweening;
 using JetBrains.Annotations;
 using SpriteCollections;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -24,6 +25,33 @@ namespace MainView
         [SerializeField] private Image m_humanHeaddressImage;
         [SerializeField] private Image m_humanClothesImage;
         [SerializeField] private Image m_humanGlassesImage;
+        [SerializeField] private Color m_humanBodyColor;
+
+
+        public System.Action<bool> OnCanSpawnNew;
+        public System.Action<bool> OnFinishEnter;
+
+        public List<Image> GetImages()
+        {
+            List<Image> images = new()
+            {
+                m_humanFaceImage,
+                m_humanBodyImage,
+                m_humanEyesSpriteImage,
+                m_humanNoseSpriteImage,
+                m_humanWyebrowsImage,
+                m_humanMouthImage,
+                m_humanHaircutImage,
+                m_maleBeardImage,
+                m_humanHeaddressImage,
+                m_humanClothesImage,
+                m_humanGlassesImage };
+            return images;
+        }
+        public Color GetColor() => m_humanBodyColor;
+
+        public bool GetBeardEnabled() => m_maleBeardImage.enabled;
+
 
         [SerializeField] private bool m_isLeft;
         [SerializeField] private bool m_isCanMove;
@@ -31,18 +59,22 @@ namespace MainView
 
         [SerializeField] private Vector2 m_leftRestorePosition;
 
-        [FormerlySerializedAs("m_leftEndPosition")] [SerializeField]
+        [FormerlySerializedAs("m_leftEndPosition")]
+        [SerializeField]
         private Vector2 m_leftAppendPosition;
 
-        [FormerlySerializedAs("m_leftStartPosition")] [SerializeField]
+        [FormerlySerializedAs("m_leftStartPosition")]
+        [SerializeField]
         private Vector2 m_leftDissapearPosition;
 
         [SerializeField] private Vector2 m_rightRestorePosition;
 
-        [FormerlySerializedAs("m_rightEndPosition")] [SerializeField]
+        [FormerlySerializedAs("m_rightEndPosition")]
+        [SerializeField]
         private Vector2 m_rightAppendPosition;
 
-        [FormerlySerializedAs("m_rightStartPosition")] [SerializeField]
+        [FormerlySerializedAs("m_rightStartPosition")]
+        [SerializeField]
         private Vector2 m_rightDissapearPosition;
 
 
@@ -74,14 +106,42 @@ namespace MainView
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Q)) HumanAppend();
-            if (Input.GetKeyDown(KeyCode.E)) HumanDisappear();
+            //if (Input.GetKeyDown(KeyCode.Q)) HumanAppend();
+            //if (Input.GetKeyDown(KeyCode.E)) HumanDisappear();
+            if (Input.GetKeyDown(KeyCode.F)) HumanLeave();
 
-            if (Input.GetKeyDown(KeyCode.R)) GenerateHumanViewFinal(m_WithBeard, m_WithHeaddress, m_WithGlasses);
+            if (Input.GetKeyDown(KeyCode.R)) GenerateHumanViewFinal(m_isMale, m_WithBeard, m_WithHeaddress, m_WithGlasses);
         }
 
-        public void GenerateHumanViewFinal(bool needBeard, bool needHeaddress, bool needGlasses)
+
+        public void CopyImage(List<Image> images, Color color, bool isBeardEnabled)
         {
+            m_humanFaceImage.sprite = images[0].sprite;
+            m_humanBodyImage.sprite = images[1].sprite;
+            m_humanEyesSpriteImage.sprite = images[2].sprite;
+            m_humanNoseSpriteImage.sprite = images[3].sprite;
+            m_humanWyebrowsImage.sprite = images[4].sprite;
+            m_humanMouthImage.sprite = images[5].sprite;
+            m_humanHaircutImage.sprite = images[6].sprite;
+            m_maleBeardImage.sprite = images[7].sprite;
+            m_humanHeaddressImage.sprite = images[8].sprite;
+            m_humanClothesImage.sprite = images[9].sprite;
+            m_humanGlassesImage.sprite = images[10].sprite;
+
+            m_humanGlassesImage.enabled = HalfRandom();
+            m_humanHeaddressImage.enabled = false;
+            m_maleBeardImage.enabled = isBeardEnabled;
+
+
+            ApplyColor(color);
+        }
+
+        private bool HalfRandom() => UnityEngine.Random.Range(0, 2) < 1;
+
+
+        public void GenerateHumanViewFinal(bool isMan, bool needBeard, bool needHeaddress, bool needGlasses)
+        {
+            m_isMale = isMan;
             m_maleBeardImage.enabled = needBeard;
             m_humanHeaddressImage.enabled = needHeaddress;
             m_humanGlassesImage.enabled = needGlasses;
@@ -114,14 +174,14 @@ namespace MainView
                     : null
             );
 
-            ApplyColor();
+            ApplyColor(m_availableColors[Random.Range(0, m_availableColors.Count)]);
         }
 
-        private void ApplyColor()
+        private void ApplyColor(Color color)
         {
-            Color color = m_availableColors[Random.Range(0, m_availableColors.Count)];
-            m_humanFaceImage.color = color;
-            m_humanBodyImage.color = color;
+            m_humanBodyColor = color;
+            m_humanFaceImage.color = m_humanBodyColor;
+            m_humanBodyImage.color = m_humanBodyColor;
             m_humanClothesImage.color = m_availableClothColors[Random.Range(0, m_availableClothColors.Count)];
             m_humanHeaddressImage.color = m_availableClothColors[Random.Range(0, m_availableClothColors.Count)];
         }
@@ -166,7 +226,7 @@ namespace MainView
                     m_humanSpriteCollection.GetSpriteFromSpriteCollection(SpriteAtlasType.FemaleHeaddress, headdress);
 
             GenerateHumanView(faceSprite, bodySprite, eyesSprite, noseSprite, eyebrowsSprite, mouthSprite,
-                haircutSprite,clothesSprite, beardSprite, headdressSprite, glassesSprite);
+                haircutSprite, clothesSprite, beardSprite, headdressSprite, glassesSprite);
         }
 
         private void GenerateHumanView(Sprite face, Sprite body, Sprite eyes, Sprite nose, Sprite eyebrows,
@@ -180,7 +240,6 @@ namespace MainView
             m_humanWyebrowsImage.sprite = eyebrows;
             m_humanMouthImage.sprite = mouth;
             m_humanHaircutImage.sprite = haircut;
-            Debug.Log(eyes.name);
             m_humanClothesImage.sprite = clothesSprite;
             if (beard != null) m_maleBeardImage.sprite = beard;
             if (headdress != null) m_humanHeaddressImage.sprite = headdress;
@@ -190,14 +249,16 @@ namespace MainView
         //появления
         public void HumanAppend()
         {
+            OnCanSpawnNew?.Invoke(false);
             if (m_isCanMove)
             {
                 var sequence = DOTween.Sequence();
-                var restoreStartPos = m_root
-                    .DOAnchorPos(m_isLeft ? m_leftRestorePosition : m_rightRestorePosition, 0.1f)
-                    .OnStart(() => AlphaCallback(1));
+                var restoreStartPos = m_root.DOAnchorPos(m_isLeft ? m_leftRestorePosition : m_rightRestorePosition, 0.1f)
+                    .OnStart(() => AlphaCallback(1))
+                    .OnComplete(() => OnCanSpawnNew?.Invoke(false));
+   
                 var pos = m_root.DOAnchorPos(m_isLeft ? m_leftAppendPosition : m_rightAppendPosition, 0.6f);
-                sequence.Append(restoreStartPos).AppendInterval(0.2f).Append(pos);
+                sequence.Append(restoreStartPos).AppendInterval(0.2f).Append(pos).OnComplete(() => OnFinishEnter?.Invoke(true));
             }
         }
 
@@ -207,10 +268,10 @@ namespace MainView
             if (m_isCanMove)
             {
                 var sequence = DOTween.Sequence();
-                var restoreStartPos =
-                    m_root.DOAnchorPos(m_isLeft ? m_leftRestorePosition : m_rightRestorePosition, 0.1f);
-                var pos = m_root.DOAnchorPos(m_isLeft ? m_leftDissapearPosition : m_rightDissapearPosition, 0.6f)
-                    .OnComplete(() => AlphaCallback(0));
+                var restoreStartPos = m_root.DOAnchorPos(m_isLeft ? m_leftRestorePosition : m_rightRestorePosition, 0.1f);
+                var pos = m_root.DOAnchorPos(m_isLeft ? m_leftDissapearPosition : m_rightDissapearPosition, 0.6f).OnComplete(() => AlphaCallback(0)).OnComplete(() => SpawnNew())
+                .OnStart(() => OnFinishEnter?.Invoke(false));
+                var fade = m_canvasGroup.DOFade(0f, .45f).SetEase(Ease.InQuad);
                 sequence.Append(pos).AppendInterval(0.2f).Append(restoreStartPos);
             }
         }
@@ -220,13 +281,24 @@ namespace MainView
             if (m_isCanMove)
             {
                 var sequence = DOTween.Sequence();
-                var restoreStartPos =
-                    m_root.DOAnchorPos(m_isLeft ? m_leftRestorePosition : m_rightRestorePosition, 0.1f);
-                var pos = m_root.DOAnchorPos(m_isLeft ? m_leftDissapearPosition : m_rightDissapearPosition, 0.6f)
-                    .OnComplete(() => AlphaCallback(0));
-                sequence.Append(restoreStartPos).AppendInterval(0.2f).Append(pos);
+                var restoreStartPos = m_root.DOAnchorPos(m_isLeft ? m_leftRestorePosition : m_rightRestorePosition, 0.1f);
+                var pos = m_root.DOAnchorPos(m_isLeft ? m_leftRestorePosition : m_rightRestorePosition, 0.6f).OnComplete(() => AlphaCallback(0)).OnComplete(() => SpawnNew())
+                    .OnStart(() => OnFinishEnter?.Invoke(false));
+                sequence.Append(pos).AppendInterval(0.2f).Append(restoreStartPos);
             }
         }
+
+        private void SpawnNew()
+        {
+            StartCoroutine(WaitingCoroutine());
+        }
+
+        private IEnumerator WaitingCoroutine()
+        {
+            yield return new WaitForSeconds(1f);
+            OnCanSpawnNew?.Invoke(true);
+        }
+
 
         private void AlphaCallback(float alpha)
         {
@@ -240,6 +312,11 @@ namespace MainView
 
         private void CheckSex(bool isMale)
         {
+        }
+
+        internal void GoSpawn()
+        {
+            GetComponent<RectTransform>().anchoredPosition = m_isLeft ? m_leftRestorePosition : m_rightRestorePosition;
         }
     }
 }

@@ -17,8 +17,9 @@ public abstract class Slot : MonoBehaviour, IDropHandler
         if (eventData.pointerDrag != null && CheckClass(eventData.pointerDrag))
         {
             var rect = eventData.pointerDrag.GetComponent<RectTransform>();
-            rect.anchoredPosition = _rectTransform.anchoredPosition;
-            rect.SetParent(transform, true);
+            //rect.anchoredPosition = _rectTransform.anchoredPosition;
+            rect.SetParent(_rectTransform, true);
+            rect.anchoredPosition = Vector2.zero;
         }
     }
 }

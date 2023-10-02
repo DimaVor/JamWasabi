@@ -45,6 +45,7 @@ public class SanctionsController : MonoBehaviour
         foreach (var flash in flashes)
         {
             badFilesNum += flash.Model.GetNumOfBadFiles();
+            Destroy(flash.gameObject);
         }
 
         _statesController.DecreaseValue(States.Cybersec, badFilesNum * _flashSanctionAmount);

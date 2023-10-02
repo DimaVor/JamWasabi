@@ -1,3 +1,4 @@
+using MainView;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -157,8 +158,6 @@ public class SpawnController : MonoBehaviour
     [SerializeField] private int _fakeIdPrecent;
 
 
-
-
     [SerializeField] private int _dbPrecent;
     [SerializeField] private List<TextMeshProUGUI> _dbLines = new();
     [SerializeField] private TextMeshProUGUI _virusText;
@@ -167,6 +166,36 @@ public class SpawnController : MonoBehaviour
 
     [Inject]
     private CardModel _card;
+    [SerializeField] private DragPhone _phone;
+    [SerializeField] private RectTransform _phoneSpawnPosition;
+
+
+
+    [SerializeField] private HumanView _enterPerson;
+    [SerializeField] private HumanView _exitPerson;
+    public HumanView EnterPerson => _enterPerson;
+    public HumanView ExitPerson => _exitPerson;
+
+    [SerializeField] private HumanView _personPhoto;
+    [SerializeField] private int _fakePhotoPrecent;
+
+
+
+    private bool canUseEnterPerson = false;
+    private bool canUseExitPerson = false;
+
+
+    [Inject] PcController _pcController;
+
+    private void OnEnable()
+    {
+        _enterPerson.OnFinishEnter += ShowCardAndPhone;
+    }
+    private void OnDisable()
+    {
+        _enterPerson.OnFinishEnter -= ShowCardAndPhone;
+    }
+
 
     public void GenerateWhiteAndBlackLists()
     {
@@ -177,7 +206,7 @@ public class SpawnController : MonoBehaviour
 
         for (int i = 0; i < _whiteListCount; i++)
         {
-            bool isMan = GenerateGender();
+            bool isMan = HalfRandom();
             name = GenerateRandomName(isMan);
             if (isMan)
             {
@@ -191,7 +220,7 @@ public class SpawnController : MonoBehaviour
 
         for (int i = 0; i < _blackListCount; i++)
         {
-            bool isMan = GenerateGender();
+            bool isMan = HalfRandom();
             name = GenerateRandomName(isMan);
             if (isMan)
             {
@@ -204,6 +233,37 @@ public class SpawnController : MonoBehaviour
         }
     }
 
+    [Inject]
+    private SanctionsController _sanctionsController;
+
+    public void AcceptPerson(bool isLeft)
+    {
+        if (isLeft)
+        {
+            if (!canUseEnterPerson)
+                return;
+
+            _sanctionsController.AcceptEnterPerson(1, 0);
+
+
+
+            _enterPerson.HumanDisappear();
+        }
+        else
+        {
+            if (!canUseExitPerson)
+                return;
+            _sanctionsController.AcceptExitPerson(0);
+            _exitPerson.HumanDisappear();
+        }
+    }
+
+    public void DenyPerson()
+    {
+        if (!canUseEnterPerson)
+            return;
+        _enterPerson.HumanLeave();
+    }
 
 
     private void Awake()
@@ -211,51 +271,111 @@ public class SpawnController : MonoBehaviour
         _phoneGenerator = GetComponent<PhoneGenerator>();
         _flashGenerator = GetComponent<FlashGenerator>();
 
-        SpawnNewPerson(true, DateTime.Now);
+        SpawnNewPerson(false, DateTime.Now);
     }
 
+    private bool HalfRandom() => UnityEngine.Random.Range(0, 2) < 1;
 
+
+
+    private int _threats = 0;
 
     public void SpawnNewPerson(bool isEnter, DateTime date)
     {
-        bool isMan = GenerateGender();
+        _threats = 0;
+
+        bool isMan = HalfRandom();
+
+
 
         if (isEnter)
         {
-            int failituresCount = 0;            
-
             bool isLigitimName = GenerateName(isMan, out string fullName);
 
             bool isLigitDate = GenerateLastDate(date.Date, out string lastDate);
 
-            bool isFakeProfession = GenerateProfession(out string profession);
+            bool isLegitProfession = GenerateProfession(out string profession);
 
-            bool isFakeId = GenerateID(out int id);
+            bool isLegitId = GenerateID(out int id);
 
-            bool isFakeCompany = GenerateComapny(out string company);
+            bool isLegitCompany = GenerateComapny(out string company);
 
-            _card.ShowCard(company, fullName, profession, id, lastDate);
+            _card.SetCard(company, fullName, profession, id, lastDate);
 
             GeneratePhone(isMan, fullName);
+
+            _enterPerson.GenerateHumanViewFinal(isMan, isMan ? HalfRandom() : false, false, HalfRandom());
+
+            bool isFakePhoto = GeneratePhoto();
+
+            _enterPerson.HumanAppend();
+
+
+            if (!isLigitimName)
+                _threats++;
+            if (!isLigitDate)
+                _threats++;
+            if (!isLegitProfession)
+                _threats++;
+            if (!isLegitId)
+                _threats++;
+            if (!isLegitCompany)
+                _threats++;
+
+
+
         }
         else
         {
+            _exitPerson.GenerateHumanViewFinal(isMan, isMan ? HalfRandom() : false, false, HalfRandom());
+
             GenerateFlashes();
+
+            _exitPerson.HumanAppend();
         }
     }
 
 
-
-    public bool GenerateGender()
+    public void ShowCardAndPhone(bool isShow)
     {
-        bool isMan = true;
-        int gender = UnityEngine.Random.Range(0, 2);
-        if (gender < 1)
+        canUseEnterPerson = isShow;
+        canUseExitPerson = isShow;
+
+
+        _card.ShowCard(isShow);
+
+        if (isShow)
+            _phone.GetComponent<RectTransform>().anchoredPosition = _phoneSpawnPosition.anchoredPosition;
+        else
         {
-            isMan = false;
+            var rect = _phone.GetComponent<RectTransform>();
+            if (rect.parent.GetComponent<Slot>() != null)
+            {
+                _pcController.HidePhone();
+                rect.SetParent(rect.parent.parent);
+            }
         }
-        return isMan;
+        _phone.gameObject.SetActive(isShow);
+
     }
+
+
+    private bool GeneratePhoto()
+    {
+        bool val = IsNotFake(_fakePhotoPrecent);
+        if (val)
+        {
+            _personPhoto.CopyImage(_enterPerson.GetImages(), _enterPerson.GetColor(), _enterPerson.GetBeardEnabled());
+        }
+        else
+        {
+            bool isMan = HalfRandom();
+            _personPhoto.GenerateHumanViewFinal(isMan, isMan ? HalfRandom() : false, false, HalfRandom());
+        }
+        return val;
+    }
+
+
     private bool GenerateName(bool isMan, out string name)
     {
         int rand = UnityEngine.Random.Range(0, 100);
@@ -373,7 +493,7 @@ public class SpawnController : MonoBehaviour
     }
 
 
-    private void GeneratePhone(bool isMan, string fullName)
+    private int GeneratePhone(bool isMan, string fullName)
     {
         bool isBadImage = _phoneGenerator.GenerateImages();
         bool isVirus = _phoneGenerator.GenerateVirus(out string virus);
@@ -384,6 +504,15 @@ public class SpawnController : MonoBehaviour
         {
             _dbLines[i].text = lines[i];
         }
+
+        int threads = 0;
+        if (!isBadImage)
+            threads++;
+        if (!isVirus)
+            threads++;
+
+       return threads;
+
     }
 
     public void AntiVirus()
@@ -403,7 +532,7 @@ public class SpawnController : MonoBehaviour
     private void GenerateFlashes()
     {
         List<Flash> flahes = new();
-        for(int i=0; i< UnityEngine.Random.Range(1, 4); i++)
+        for (int i = 0; i < UnityEngine.Random.Range(1, 4); i++)
         {
             flahes.Add(_flashGenerator.GenerateFlash());
         }

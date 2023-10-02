@@ -24,10 +24,11 @@ public class PcController : MonoBehaviour
     public void ShowFlash()
     {
         HidePhone();
+        _flashCheck.gameObject.SetActive(true);
     }
 
     public void HideFlash()
     {
-
+        _flashCheck.gameObject.SetActive(false);
     }
 }

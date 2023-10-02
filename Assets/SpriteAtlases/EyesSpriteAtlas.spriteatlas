@@ -91,7 +91,7 @@ SpriteAtlas:
   - eye_1
   - eye_b
   - eye_3
-  - 'eye_02g '
+  - eye_02g
   - eye
   - eye_03
   m_RenderDataMap: {}
